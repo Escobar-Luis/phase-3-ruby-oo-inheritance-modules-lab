@@ -1,11 +1,14 @@
 require 'pry'
 
+
 class Song
+  extend Memorable::ClassInstances
   attr_accessor :name
   attr_reader :artist
 
   @@songs = []
 
+  # 
   def initialize
     @@songs << self
   end
@@ -18,14 +21,15 @@ class Song
     @@songs
   end
 
-  def self.reset_all
-    self.all.clear
-  end
+  # def self.reset_all
+  #   self.all.clear
+  # end
 
-  def self.count
-    self.all.count
-  end
+  # def self.count
+  #   self.all.count
+  # end
 
+  # This is the method of the song class where we are able to set our artist of our song into an instance
   def artist=(artist)
     @artist = artist
   end
